@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../SistemaElectoral.BLL/SistemaElectoral.BLL.csproj" />
+  <Project Path="../SistemaElectoral.DAl/SistemaElectoral.DAl.csproj" />
+  <Project Path="../SistemaElectoral.Entidades/SistemaElectoral.Entidades.csproj" />
+  <Project Path="SistemaElectoral.csproj" />
+</Solution>
