@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="../SistemaElectoral.BLL/SistemaElectoral.BLL.csproj" />
-  <Project Path="../SistemaElectoral.DAl/SistemaElectoral.DAl.csproj" />
-  <Project Path="../SistemaElectoral.Entidades/SistemaElectoral.Entidades.csproj" />
-  <Project Path="SistemaElectoral.csproj" />
+  <Project Path="../SistemaElectoral.BLL/SistemaElectoral.BLL.csproj" Id="09509f6c-c4d3-4775-97c1-6b23d01e5de8" />
+  <Project Path="../SistemaElectoral.DAl/SistemaElectoral.DAl.csproj" Id="4a07544d-d079-41fb-99fd-50c0bee8932d" />
+  <Project Path="../SistemaElectoral.Entidades/SistemaElectoral.Entidades.csproj" Id="37321996-da08-4245-8ebd-3e37e5351d84" />
+  <Project Path="SistemaElectoral.csproj" Id="1eccb5df-f691-4152-b465-1f791915c2c1" />
 </Solution>

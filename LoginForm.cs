@@ -99,7 +99,7 @@ namespace SistemaElectoral
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtMatricula.Text) ||
-         string.IsNullOrWhiteSpace(txtPassword.Text))
+        string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 MessageBox.Show("Completa todos los campos");
                 return;
@@ -108,8 +108,9 @@ namespace SistemaElectoral
             using (var db = new SistemaElectoralEntities())
             {
                 var usuario = db.Usuarios
-                    .FirstOrDefault(u => u.Matricula == txtMatricula.Text &&
-                                         u.Password == txtPassword.Text);
+                    .FirstOrDefault(u =>
+                        u.Matricula == txtMatricula.Text &&
+                        u.Password == txtPassword.Text);
 
                 if (usuario == null)
                 {
@@ -117,15 +118,35 @@ namespace SistemaElectoral
                     return;
                 }
 
-                if(usuario.YaVoto == true)
+                if (usuario.YaVoto == true && usuario.Rol != "Admin")
                 {
                     MessageBox.Show("Este usuario ya votó");
                     return;
                 }
 
                 MessageBox.Show("Bienvenido " + usuario.Nombre);
+
+                this.Hide();
+
+                // 🔥 ADMIN
+                if (usuario.Rol == "Admin")
+                {
+                    AdminForm admin = new AdminForm(usuario);
+                    admin.ShowDialog();
+                }
+
+                // 🔥 USUARIO NORMAL
+                else
+                {
+                    VotacionForm voto = new VotacionForm(usuario);
+                    voto.ShowDialog();
+                }
+
+                this.Close();
             }
         }
+
+
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
